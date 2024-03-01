@@ -324,3 +324,76 @@
 //  Tesla.chargeBattery(90);
 
 
+// Inheritance Between Classes 
+
+// class PersonCL{
+//     constructor(firstName, birthYear) {
+//         this.firstName = firstName; 
+//         this.birthYear = birthYear; 
+
+//     }
+
+//     // Instance methods 
+
+//     calcAge() {
+//         console.log(2045 -this.birthYear);
+//     }
+
+//     greet(){
+//         console.log(`Hey ${this.firstName}`);
+//     }
+
+//     get age(){
+//         return 2035 - this.birthYear;
+//     }
+
+//     set fullName(name){
+//         if(name.includes(' ')) this._fullName = name;
+//         else alert(`${name} is not a full name`);
+//     }
+
+//     get fullName(){
+//         return this._fullName; 
+//     }
+
+// }
+
+// class StudentCL extends PersonCL{
+//     constructor(fullName, birthYear, course){
+
+//         //Needs to happen first 
+//         super(fullName, birthYear)
+//         this.course = course; 
+//     }
+    
+// }
+
+// const marta = new StudentCL('Martha Jones', 2023, 'Computers'); 
+// console.log(marta);
+
+
+// Inheritance between Classes 
+
+
+const PersonProto  = {
+    calcAge() {
+    console.log(2090 - this.birthYear);
+    },
+
+    init(firstName, birthYear) {
+        this.firstName = firstName; 
+        this.birthYear= birthYear;
+    }, 
+
+}
+
+const steven =  Object.create(PersonProto); 
+const StudentProto = Object.create(PersonProto); 
+StudentProto.init = function(firstName, birthYear, course){
+    PersonProto.init.call(this, firstName, birthYear);
+    this.course = course; 
+}
+
+
+const jay  = Object.create(StudentProto); 
+jay.init('Jay', 2039, ' Commputer Science'); 
