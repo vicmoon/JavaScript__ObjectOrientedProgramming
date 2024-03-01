@@ -2,16 +2,16 @@
 
 //Constructor functions  
 //Instance properties 
-const Person = function(firstName, birthYear){
-this.firstname = firstName; 
-this.birthYear = birthYear;
-//Never do this!!! 
-this. calcAge = function(){
-    console.log(2034 - this.birthYear);
-}
-}
+// const Person = function(firstName, birthYear){
+// this.firstname = firstName; 
+// this.birthYear = birthYear;
+// //Never do this!!! 
+// this. calcAge = function(){
+//     console.log(2034 - this.birthYear);
+// }
+// }
 
-const victoria = new Person('Victoria', 2059);
+// const victoria = new Person('Victoria', 2059);
 
 
 // //a new object is created
@@ -98,44 +98,44 @@ const victoria = new Person('Victoria', 2059);
 
 //Challange 
 
-class Cars {
-    constructor(make, speed){
-        this.make = make;
-        this.speed = speed
-    }
-    accelerate(){
-    const speed =  this.speed += 10; 
-    console.log(`Your speed is ${speed}km/h`);
-    }
+// class Cars {
+//     constructor(make, speed){
+//         this.make = make;
+//         this.speed = speed
+//     }
+//     accelerate(){
+//     const speed =  this.speed += 10; 
+//     console.log(`Your speed is ${speed}km/h`);
+//     }
   
-    brake(){
-    const  brake = this.speed - 5;
-    console.log(`You slowed down to ${brake}km/h`);
-    }
+//     brake(){
+//     const  brake = this.speed - 5;
+//     console.log(`You slowed down to ${brake}km/h`);
+//     }
 
 
-    get speedUS(){
-        const newSpeed = this.speed /1.6;
-        return `Your new speed is ${newSpeed} `; 
-    }
+//     get speedUS(){
+//         const newSpeed = this.speed /1.6;
+//         return `Your new speed is ${newSpeed} `; 
+//     }
 
-    set speedUS(speed){
-        const oldSpeed = this.speed /1.6;
-        const newSpeed = oldSpeed * 1.6;
-        return `Your newest speed is ${newSpeed}`;; 
-    }
-}
+//     set speedUS(speed){
+//         const oldSpeed = this.speed /1.6;
+//         const newSpeed = oldSpeed * 1.6;
+//         return `Your newest speed is ${newSpeed}`;; 
+//     }
+// }
 
-// const BMW = new Cars('BMW', 5);
-// BMW.accelerate(); 
-// BMW.brake(); 
+// // const BMW = new Cars('BMW', 5);
+// // BMW.accelerate(); 
+// // BMW.brake(); 
 
-const Ford  = new Cars('Ford', 120);
-Ford.accelerate();
-Ford.brake(); 
-console.log(Ford.speedUS);
-Ford.speedUS = 50;
-console.log(Ford);
+// const Ford  = new Cars('Ford', 120);
+// Ford.accelerate();
+// Ford.brake(); 
+// console.log(Ford.speedUS);
+// Ford.speedUS = 50;
+// console.log(Ford);
 
 
 
@@ -228,3 +228,99 @@ console.log(Ford);
 // const sara = Object.create(PersonProto);
 // sara.init('Sara',  2345); 
 // sara.calcAge();
+
+
+// class inheritance : 
+
+
+// const Person = function(firstName, birthYear){
+//     this.firstName = firstName; 
+//     this.birthYear = birthYear;
+// }
+
+// Person.prototype.calcAge = function(){
+//     console.log(2035 - this.birthYear);
+// }
+    
+
+// const Student = function (firstName,birthYear,course){
+//     Person.call(this, firstName, birthYear);
+//     console.log(this);
+//     this.course = course; 
+// };
+
+// // Linking protypes 
+
+// Student.prototype = Object.create(Person.prototype);
+// Student.prototype.introduce = function(){
+//     console.log(`My name is ${this.firstName} and I study ${this.course}`);
+// }
+
+// const jack =  new Student('Mike', 2004, 'Programming'); 
+// console.log(jack);
+// jack.introduce(); 
+// jack.calcAge(); 
+
+// console.log(jack.__proto__.__proto__);
+// Student.prototype.constructor = Student;
+// console.dir(Student.prototype.constructor);
+
+
+// // Challange 
+
+// const Car  = function(make, speed){
+//         this.make = make
+//         this.speed = speed
+//     }; 
+
+
+//     Car.prototype.accelerate=  function () {
+//     const speed =  this.speed += 10; 
+//     console.log(`Your speed is ${speed}km/h`);
+//     };
+  
+//     Car.prototype.brake = function(){
+//     const  brake = this.speed - 5;
+//     console.log(`You slowed down to ${brake}km/h`);
+//     }
+
+
+//     // get speedUS(){
+//     //     const newSpeed = this.speed /1.6;
+//     //     return `Your new speed is ${newSpeed} `; 
+//     // }
+
+//     // set speedUS(speed){
+//     //     const oldSpeed = this.speed /1.6;
+//     //     const newSpeed = oldSpeed * 1.6;
+//     //     return `Your newest speed is ${newSpeed}`;; 
+//     // }
+
+// const ElectricCar  = function(make, speed, charge){
+//       Car.call(this, make, speed); 
+//       this.charge = charge; 
+// }
+
+
+// // linking the prototype 
+// ElectricCar.prototype = Object.create(Car.prototype); 
+
+// //
+// ElectricCar.prototype.chargeBattery = function(chargeTo){
+//    this.charge = chargeTo; 
+// }; 
+
+// ElectricCar.prototype.accelerate = function(speed){
+//     const newSpeed = this.speed += 20; 
+//     const newCharge = this.charge--; 
+//     console.log(`Tesla going at ${newSpeed} km/h, with a charge of ${newCharge}%`);
+// }
+
+
+//  const Tesla = new ElectricCar('Tesla', 120, 23);
+//  Tesla.accelerate(); 
+//  Tesla.accelerate(); 
+//  Tesla.accelerate(); 
+//  Tesla.chargeBattery(90);
+
+
