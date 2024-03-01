@@ -375,25 +375,112 @@
 // Inheritance between Classes 
 
 
-const PersonProto  = {
-    calcAge() {
-    console.log(2090 - this.birthYear);
-    },
+// const PersonProto  = {
+//     calcAge() {
+//     console.log(2090 - this.birthYear);
+//     },
 
-    init(firstName, birthYear) {
-        this.firstName = firstName; 
-        this.birthYear= birthYear;
-    }, 
+//     init(firstName, birthYear) {
+//         this.firstName = firstName; 
+//         this.birthYear= birthYear;
+//     }, 
 
-}
+// }
 
-const steven =  Object.create(PersonProto); 
-const StudentProto = Object.create(PersonProto); 
-StudentProto.init = function(firstName, birthYear, course){
-    PersonProto.init.call(this, firstName, birthYear);
-    this.course = course; 
-}
+// const steven =  Object.create(PersonProto); 
+// const StudentProto = Object.create(PersonProto); 
+// StudentProto.init = function(firstName, birthYear, course){
+//     PersonProto.init.call(this, firstName, birthYear);
+//     this.course = course; 
+// }
 
 
-const jay  = Object.create(StudentProto); 
-jay.init('Jay', 2039, ' Commputer Science'); 
+// const jay  = Object.create(StudentProto); 
+// jay.init('Jay', 2039, ' Commputer Science'); 
+
+
+
+//Public fields 
+//Private fields 
+//Public methods 
+//Private methods 
+
+
+// class account {
+
+//     //Public fields (instances)
+//        locale = navigator.language
+//     //    _movements = []; 
+
+//      //Private fields 
+//      #movements = []; 
+//      #pin;
+
+//     constructor(owner, currency, pin){
+//         this.owner = owner; 
+//         this.currency  = currency;
+//         //protected
+//         this.#pin = pin; 
+//         // this._movements = [];
+//         // this.locale  = navigator.language; 
+
+//         console.log(`Thanks for opening an account ${owner}`);
+//     }
+
+//    // Public interface  or // Public methods 
+//      getMovements() {
+//         return this.#movements;
+//      }
+
+//     deposit(val){
+//         this.#movements.push(val);
+//         return this; 
+//     }
+
+//     withdraw(val){
+//         this.deposit(-val)
+//         return this;
+//     }
+
+//     _approveLoan(val){
+//         return true;
+//         return this;
+//     }
+//     requestLoad(val){
+//         if(this._approveLoan(val)){
+//             console.log('Loan approved');
+//         }
+//         return this;
+//     }
+
+
+//     //Private methods 
+
+//     _approveLoan(val){
+//         return true;
+//     }
+// }
+
+
+// const acc1 = new account( 'Victoria', 'EUR', 1111); 
+
+
+// acc1.deposit(150);
+// acc1.withdraw(120);
+// acc1.requestLoad(1000); 
+// acc1.approveLoan(2000); // we should not be able to access this method 
+// console.log(acc1.pin);
+// console.log(acc1.getMovements);
+// // console.log(acc1.#movements);
+
+// //ENCAPSULATION 
+
+// // _fieldName 
+
+
+// //Chaining 
+
+// acc1.deposit(300)
+
+
+
